@@ -8,6 +8,7 @@ RUN easy_install pip
 RUN apt-get install libfreetype6 libfreetype6-dev -y
 RUN apt-get install libfontconfig1 libfontconfig1-dev -y
 
+RUN pip install httpie
 # Bundle app source
 ADD . /home
 
