@@ -1,0 +1,13 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker info
+    - docker build -t fprieur/docker-demo .
+
+test:
+  override:
+    - docker run -d --name demo -p 5000:5000 fprieur/docker-demo
+    - curl --retry 10 --retry-delay 5 -v http://localhost:5000 
