@@ -17,4 +17,4 @@ WORKDIR /home
 
 RUN pip install -r requirements.txt
 
-CMD python demo.py
+CMD ["python", "demo.py"]
